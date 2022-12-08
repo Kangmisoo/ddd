@@ -1,0 +1,12 @@
+<h1> 상품등록하기 </h1>
+<form action="addrecord" method="post" class="w3-container">
+{% csrf_token %}<!-- 장고에서는 form 테그를 사용할 경우 삽입-->
+상품명 : <input type="text" name="name" class="w3-input">
+<br>
+상품이미지 : <input type="text" name="img" class="w3-input">
+<br>
+가격 : <input type="text" name="price" class="w3-input">
+<br>
+<input type="submit" value="등록" class="w3-btn w3-green">
+<input type="reset" value="취소" class="w3-btn w3-gray">
+</form>

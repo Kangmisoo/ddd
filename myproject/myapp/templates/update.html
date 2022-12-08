@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>회원 {{m.id}} 수정</h1>
+<form action="updaterecord/{{m.id}}" method="post">
+    {% csrf_token %}
+    이름 : <input type="text" name="first" id="" value="{{m.firstname}}"><br>
+    성 : <input type="text" name="last" id="" value="{{m.lastname}}"><br>
+    <input type="submit" value="회원수정">
+</form>
+{% endblock %}

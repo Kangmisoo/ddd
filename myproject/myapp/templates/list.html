@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>회원정보</h1>
+    <table class="w3-table-all w3-hoverable">
+    <tr>
+        <th>회원 id</th>
+        <th>성</th>
+        <th>이름</th>
+        <th>기능</th>
+    </tr>
+    {% for x in m %}
+    <tr>
+        <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+        <td>{{ x.firstname }}</td>
+        <td>{{ x.lastname }}</td>
+        <td><a href="delete/{{ x.id }}">삭제</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <div><a href="add/"><button> 회원가입</button></a></div>
+{% endblock %}

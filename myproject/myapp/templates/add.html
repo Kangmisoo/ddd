@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> 회원가입 </h1>
+<form action="addrecord" method="post" class="w3-container">
+    {% csrf_token %} <!--장고에서 form 태그를 사용할 경우 반드시 삽입 -->
+    이름 : <input type="text" name="last" id="" class="w3-input"> <br>
+    성 : <input type="text" name="first" class="w3-input"> <br>
+    <br>
+    <input type="submit" value="회원가입">
+    <input type="reset" value="취소">
+
+</form>
+{% endblock %}

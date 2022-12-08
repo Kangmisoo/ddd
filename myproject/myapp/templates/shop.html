@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Mall</title>
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+</head>
+<body>
+    {% include 'header.html' %} 
+    <section class="shop">
+        <div class="product1">
+            <img src="{% static './images/computer.png' %}" width="100" height="100" />
+            <p>
+                심플하고 슬림한 본체에 코어i5 3470과지포스 GT630을 장착
+                CPU: 인텔 코어i5 3470 (아이비브릿지 3세대) 사용<br />
+                가격: 1,200,000원
+            </p>
+            <input type="button" value="쇼핑카트에 추가하기" class="cart"/>
+        </div>
+        <div class="product2">
+            <img src="{% static './images/notebook.png' %}" width="100" height="100" />
+            <p>
+                Full-HD로 선명한 화면, ISP패널로
+      시야각도 좋다!  CPU: 인텔 코어i7 3630 QM, CPU: 인텔 코어i7 3630 QM
+                <br />
+                가격: 1,200,000원
+            </p>
+            <input type="button" value="쇼핑카트에 추가하기" class="cart"/>
+        </div>
+        <div class="product3">
+            <img src="{% static './images/tshirt.jpg' %}" width="100" height="100" />
+            <p>
+                Full-HD로 선명한 화면, ISP패널로
+      시야각도 좋다!  CPU: 인텔 코어i7 3630 QM, CPU: 인텔 코어i7 3630 QM
+                <br />
+                가격: 1,200,000원
+            </p>
+            <input type="button" value="쇼핑카트에 추가하기" class="cart"/>
+        </div>
+    </section>
+    <section>
+        <table border="1">
+            <tr>
+                <th>제품명</th>
+                <th>제품사진</th>
+                <th>가격</th>
+            </tr>
+            {% for x in t %}
+            <tr>
+                <td>{{x.title}}</td>
+                <td><img src="{% static './' %}{{x.data}}"></td>
+                <td>{{x.price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+    <br><br>
+    
+    {% include 'footer.html' %}
+</body>
+</html>

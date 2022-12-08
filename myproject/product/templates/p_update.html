@@ -1,0 +1,14 @@
+<h1> 상품id={{p.id}} : 상품 수정</h1>
+<form action="updaterecord/{{p.id}}" method="post" class="w3-container">
+{% csrf_token %} <!-- 장고에서는 form 테그를 사용할 경우 삽입-->
+제품명 : 
+<input type="text" name='name' value="{{p.name}}" class="w3-input">
+<br>
+제품가격 : 
+<input type="text" name="price" value="{{p.price}}" class="w3-input">
+<br>
+제품이미지 : 
+<input type="text" name="img" value="{{p.img}}" class="w3-input">
+<br>
+<input type="submit" value="수정" class="w3-btn w3-green">
+</form>

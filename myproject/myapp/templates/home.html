@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Misoo's Site</title>
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <section>
+        <div class="content">
+        <article>
+            <div class="photo"> <!-- . : class, # : id-->
+                <img src="{% static './images/bigdata.jpg' %}" >  
+                
+            </div>
+            <div class="action">
+                <h2>대외활동리스트</h2>
+                <!-- table>tr>th*3^tr*3>td*3 -->
+                <table>
+                    <tr>
+                        <th>기간</th>
+                        <th>대외활동</th>
+                        <th>주최</th>
+                    </tr>
+                    <tr>
+                        <td>2021.3.</td>
+                        <td>마케팅전략 경진대회</td>
+                        <td>정보시스템학회</td>
+                    </tr>
+                    <tr>
+                        <td>2022.05.</td>
+                        <td>롯데 빅데이터 경진대회</td>
+                        <td>롯데그룹</td>
+                    </tr>
+                    <tr>
+                        <td>2022.08.</td>
+                        <td>머신러닝 교육프로그램</td>
+                        <td>동아대학교</td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+        <br><br>
+       </div>
+    <aside class="right"> 
+        <div class="login">
+            
+            <form action="#" method="post">
+                <h2> 로그인</h2>
+                회원ID : <input type="text" name="id" id=""><br>
+                비밀번호: <input type="password" name="pw" id=""><br>
+                <input type="submit" value="제출">
+                <input type="button" value="회원가입">
+            </form>
+        </div>
+        <div class="bookmark">
+            <h2> 즐겨찾기</h2>
+            <a href="http://mis.donga.ac.kr" target="_blank">경영정보학과</a><br>
+            <a href="/">갤러리</a><br>
+            <a href="/">홈이동</a><br>
+        </div>
+
+    </aside>
+    </section>
+</body>
+</html>
